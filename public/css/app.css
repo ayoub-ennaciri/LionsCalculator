@@ -1,0 +1,70 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body
+{
+    display: flex;
+    flex-direction: column;
+    background-color: #710193;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+    padding: 1vh 2vw;
+}
+
+
+#previousResult
+{
+    height: 70%;
+    width: 100%;
+    background-color: green;
+}
+
+#result
+{
+    height: 30%;
+    width: 100%;
+    font-size: 30px; 
+}
+
+
+
+
+.output_text
+{
+    height: 30vh;
+    width: 95vw;
+    display: ;
+    background-color: aqua;
+}
+
+
+button:active 
+{
+    background-color: #c7c2c2;
+}
+
+.buttons
+{
+    width: 95vw;
+    height: 60vh;
+    gap: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.main_buttons
+{
+    border: none;
+    border-radius: 10%;
+    font-size: 35px;
+}
+
+
+
+.function 
+{
+    background-color: #FFBF00;
+}
