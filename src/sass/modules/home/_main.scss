@@ -1,0 +1,52 @@
+.buttons
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+button
+{
+    height: 15vw;
+    width: 15vw;
+    border-radius: 50%;
+    color: white;
+    background-color: #964B00;
+    
+}
+
+.diffrent
+{
+    background-color: #ffba00;
+}
+
+.screen
+{
+    text-align: end;
+}
+
+.calculator
+{
+    font-size: 30px;
+}
+
+
+button:active
+{
+    background-color:rgb(192, 175, 175);
+    color: black;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.diffrent{
+    background-image: linear-gradient(left , green white);
+}
