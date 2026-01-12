@@ -10,42 +10,48 @@
 
     <div class="calculator max bg-black border-1 d-flex flex-column vw-95 vh-85 ">
         <div class="screen  h-25 ps-1 pe-1">
-            <div class=" opacity-50 align-items-end h-70 d-flex  text-white screen  w-100  "><input disabled type="text" class="screen w-95 text-white border-0 bg-transparent"></div>
-            <div class="h-30 d-flex align-items-center justify-content-center   w-100  "><input type="text" class="screen w-95 text-white border-0 bg-transparent"></div>
+            <div  class=" opacity-50 align-items-end h-70 d-flex  text-white screen  w-100  "><input id="topS" disabled type="text" class="screen w-95 text-white border-0 bg-transparent"></div>
+            <div  class="h-30 d-flex align-items-center justify-content-center   w-100  "><input style="overflow-x: auto; white-space: nowrap;" id="bottomS" placeholder="0" type="text" class="screen w-95 text-white border-0 bg-transparent"></div>
         </div>
         <div class=" buttons h-70 container ps-1">
-            <button class="fw-bold border-0 rounded-2">e</button>
-            <button class="fw-bold border-0 rounded-2">cos</button>
-            <button class="fw-bold border-0 rounded-2">sin</button>
-            <button class="fw-bold border-0 rounded-2">tan</button>
-            <button class="fw-bold border-0 rounded-2 fs-2  diffrent" >DEL</button>
-            <button class="fw-bold border-0 rounded-2">Xˣ</button>
-            <button class="fw-bold border-0 rounded-2">(</button>
-            <button class="fw-bold border-0 rounded-2">)</button>
-            <button class="fw-bold border-0 rounded-2">%</button>
-            <button class="fw-bold border-0 rounded-2 diffrent">AC</button>
-            <button class="fw-bold border-0 rounded-2">7</button>
-            <button class="fw-bold border-0 rounded-2">8</button>
-            <button class="fw-bold border-0 rounded-2">9</button>
-            <button class="fw-bold border-0 rounded-2">?</button>
-            <button class="fw-bold border-0 rounded-2 diffrent">/</button>
-            <button class="fw-bold border-0 rounded-2">4</button>
-            <button class="fw-bold border-0 rounded-2">5</button>
-            <button class="fw-bold border-0 rounded-2">6</button>
-            <button class="fw-bold border-0 rounded-2">log</button>
-            <button class="fw-bold border-0 rounded-2 diffrent">x</button>
-            <button class="fw-bold border-0 rounded-2">1</button>
-            <button class="fw-bold border-0 rounded-2">2</button>
-            <button class="fw-bold border-0 rounded-2">3</button>
-            <button class="fw-bold border-0 rounded-2">√</button>
-            <button class="fw-bold border-0 rounded-2 diffrent">-</button>
-            <button class="fw-bold border-0 rounded-2">0</button>
-            <button class="fw-bold border-0 rounded-2">.</button>
-            <button class="fw-bold border-0 rounded-2 fs-2">ANS</button>
-            <button class="fw-bold border-0 rounded-2">=</button>
-            <button class="fw-bold border-0 rounded-2 diffrent">+</button>
+            <button id="e" class="fw-bold border-0 rounded-2">e</button>
+            <button id="cos" class="fw-bold border-0 rounded-2">cos</button>
+            <button id="sin" class="fw-bold border-0 rounded-2">sin</button>
+            <button id="tan" class="fw-bold border-0 rounded-2">tan</button>
+            <button id="del" class="fw-bold border-0 rounded-2 fs-2  diffrent" >DEL</button>
+            <button id="pow" class="fw-bold border-0 rounded-2">Xˣ</button>
+            <button id="lp" class="fw-bold border-0 rounded-2">(</button>
+            <button id="rp" class="fw-bold border-0 rounded-2">)</button>
+            <button id="percent" class="fw-bold border-0 rounded-2">%</button>
+            <button id="ac" class="fw-bold border-0 rounded-2 diffrent">AC</button>
+            <button id="seven" class="fw-bold border-0 rounded-2">7</button>
+            <button id="eight" class="fw-bold border-0 rounded-2">8</button>
+            <button id="nine" class="fw-bold border-0 rounded-2">9</button>
+            <button id="history" class="fw-bold border-0 rounded-2">?</button>
+            <button id="devide" class="fw-bold border-0 rounded-2 diffrent">/</button>
+            <button id="foor" class="fw-bold border-0 rounded-2">4</button>
+            <button id="five" class="fw-bold border-0 rounded-2">5</button>
+            <button id="six" class="fw-bold border-0 rounded-2">6</button>
+            <button id="log" class="fw-bold border-0 rounded-2">log</button>
+            <button id="mutiply" class="fw-bold border-0 rounded-2 diffrent">x</button>
+            <button id="one" class="fw-bold border-0 rounded-2">1</button>
+            <button id="two" class="fw-bold border-0 rounded-2">2</button>
+            <button id="three" class="fw-bold border-0 rounded-2">3</button>
+            <button id="sq" class="fw-bold border-0 rounded-2">√</button>
+            <button id="minus" class="fw-bold border-0 rounded-2 diffrent">-</button>
+            <button id="zero" class="fw-bold border-0 rounded-2">0</button>
+            <button id="dot" class="fw-bold border-0 rounded-2">.</button>
+            <button id="ans" class="fw-bold border-0 rounded-2 fs-2">ANS</button>
+            <button id="equal" class="fw-bold border-0 rounded-2">=</button>
+            <button id="plus" class="fw-bold border-0 rounded-2 diffrent">+</button>
         </div>
     </div>
-    <!-- <script src=./public/js/app.js></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/mathjs@11.12.0/lib/browser/math.js"></script>
+<script>
+console.log(math.cos(1* Math.PI / 180)); // 5
+</script> -->
+
+
+    <script type="module"  src=./public/js/app.js></script>
 </body>
 </html>
