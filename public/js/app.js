@@ -76,7 +76,7 @@ const node = [
 
 // led type 
 ["PLUS", 10, (left,right) => {let L = new Decimal(left); let R = new Decimal(right); return L.add(R)}],
-["MINUS", 10, (left,right) => {let L = new Decimal(left); let R = new Decimal(right); return L.subtract(R)}],
+["MINUS", 10, (left,right) => {let L = new Decimal(left); let R = new Decimal(right); return L.minus(R)}],
 ["SLASH", 20, (left,right) => {let L = new Decimal(left); let R = new Decimal(right); return L.div(R)}],
 ["ASTRICS", 20, (left,right) => {let L = new Decimal(left); let R = new Decimal(right); return L.times(R)}],
 ["POW", 20, (left,right) => {let L = new Decimal(left); let R = new Decimal(right); return L.pow(R)}],
@@ -121,36 +121,18 @@ let plus  = document.getElementById("plus")
 let topS  = document.getElementById("topS")
 let bottomS  = document.getElementById("bottomS")
 
+const mergeString = (substr) =>{
+    return bottomS.value + substr
+}
 
 // main screen buffer
 bottomS.value = ""
 
 // if the button is pressed write to the buffer 
-e.onclick = ()=>
-{
-    bottomS.value = bottomS.value + "e"
-    console.log(bottomS.value)
-    
-}
-
-cos.onclick = ()=>
-{
-    bottomS.value = bottomS.value + "cos"
-    console.log(bottomS.value)
-}
-
-sin.onclick = ()=>
-{
-    bottomS.value = bottomS.value + "sin"
-    console.log(bottomS.value)
-}
-
-tan.onclick = ()=>
-{
-    bottomS.value = bottomS.value + "tan"
-    console.log(bottomS.value)
-}
-
+e.onclick = ()=>{bottomS.value = mergeString("e")}
+cos.onclick = ()=>{bottomS.value = mergeString("cos")}
+sin.onclick = ()=>{bottomS.value = mergeString("sin")}
+tan.onclick = ()=>{bottomS.value = mergeString("tan")}
 del.onclick = ()=>
 {
     let dell 
@@ -165,147 +147,40 @@ del.onclick = ()=>
 
     console.log(bottomS.value)
 }
-
-pow.onclick = ()=>
-{
-    bottomS.value = bottomS.value + "^"
-    console.log(bottomS.value)
-}
-
-lp.onclick = ()=>
-{
-    bottomS.value = bottomS.value + "("
-    console.log(bottomS.value)
-}
-
-rp.onclick = ()=>
-{
-    bottomS.value = bottomS.value + ")"
-    console.log(bottomS.value)
-}
-
-percent.onclick = ()=>
-{
-    bottomS.value = bottomS.value + "%"
-    console.log(bottomS.value)
-}
-
-ac.onclick = ()=>
-{
-    bottomS.value = ""
-    console.log(bottomS.value)
-}
-
-seven.onclick = ()=>
-{
-    bottomS.value = bottomS.value + "7"
-    console.log(bottomS.value)
-}
-
-eight.onclick = ()=>
-{
-    bottomS.value = bottomS.value + "8"
-    console.log(bottomS.value)
-}
-
-nine.onclick = ()=>
-{
-    bottomS.value = bottomS.value + "9"
-    console.log(bottomS.value)
-}
+pow.onclick = ()=>{bottomS.value = mergeString("^")}
+lp.onclick = ()=>{bottomS.value = mergeString("(")}
+rp.onclick = ()=>{bottomS.value = mergeString(")")}
+percent.onclick = ()=>{bottomS.value = mergeString("%")}
+ac.onclick = ()=>{bottomS.value = ""}
+seven.onclick = ()=>{bottomS.value = mergeString("7")}
+eight.onclick = ()=>{bottomS.value = mergeString("8")}
+nine.onclick = ()=>{bottomS.value = mergeString("9")}
 // todo
 history.onclick = ()=>
 {
     bottomS.value = bottomS.value + ""
     console.log(bottomS.value)
 }
-
-devide.onclick = ()=>
-{
-    bottomS.value = bottomS.value + "/"
-    console.log(bottomS.value)
-}
-
-foor.onclick = ()=>
-{
-    bottomS.value = bottomS.value + "4"
-    console.log(bottomS.value)
-}
-
-five.onclick = ()=>
-{
-    bottomS.value = bottomS.value + "5"
-    console.log(bottomS.value)
-}
-
-six.onclick = ()=>
-{
-    bottomS.value = bottomS.value + "6"
-    console.log(bottomS.value)
-}
-
-log.onclick = ()=>
-{
-    bottomS.value = bottomS.value + "log"
-    console.log(bottomS.value)
-}
-
-mutiply.onclick = ()=>
-{
-    bottomS.value = bottomS.value + "*"
-    console.log(bottomS.value)
-}
-
-one.onclick = ()=>
-{
-    bottomS.value = bottomS.value + "1"
-    console.log(bottomS.value)
-}
-
-two.onclick = ()=>
-{
-    bottomS.value = bottomS.value + "2"
-    console.log(bottomS.value)
-}
-
-three.onclick = ()=>
-{
-    bottomS.value = bottomS.value + "3"
-    console.log(bottomS.value)
-}
-
-sq.onclick = ()=>
-{
-    bottomS.value = bottomS.value + "√"
-    console.log(bottomS.value)
-}
-
-minus.onclick = ()=>
-{
-    bottomS.value = bottomS.value + "-"
-    console.log(bottomS.value)
-}
-
-zero.onclick = ()=>
-{
-    bottomS.value = bottomS.value + "0"
-    console.log(bottomS.value)
-}
-
-dot.onclick = ()=>
-{
-    bottomS.value = bottomS.value + "."
-    console.log(bottomS.value)
-}
+devide.onclick = ()=>{bottomS.value = mergeString("/")}
+foor.onclick =  ()=>{bottomS.value = mergeString("4")}
+five.onclick = ()=>{bottomS.value = mergeString("5")}
+six.onclick = ()=>{bottomS.value = mergeString("6")}
+log.onclick = ()=>{bottomS.value = mergeString("log")}
+mutiply.onclick = ()=>{bottomS.value = mergeString("*")}
+one.onclick = ()=>{bottomS.value = mergeString("1")}
+two.onclick = ()=>{bottomS.value = mergeString("2")}
+three.onclick = ()=>{bottomS.value = mergeString("3")}
+sq.onclick = ()=>{bottomS.value = mergeString("√")}
+minus.onclick = ()=>{bottomS.value = mergeString("-")}
+zero.onclick = ()=>{bottomS.value = mergeString("0")}
+dot.onclick = ()=>{bottomS.value = mergeString(".")}
 // todo
 ans.onclick = ()=>
 {
     bottomS.value = bottomS.value + ""
     console.log(bottomS.value)
 }
-// todo
-
-(equal.onclick ) = ()=>
+const Equal = ()=>
 {
     let tmp = ""
     code.init(bottomS.value)
@@ -313,13 +188,16 @@ ans.onclick = ()=>
     bottomS.value = goodOut(tmp)
     console.log(goodOut(bottomS.value))
 }
-
-plus.onclick = ()=>
-{
-    bottomS.value = bottomS.value + "+"
-    console.log(bottomS.value)
-}
-
+equal.onclick = ()=> { Equal()}
+document.addEventListener("keydown", (event)=>
+    { 
+        if(event.key ==="Enter"){
+            event.preventDefault()
+            Equal()
+        }
+    }
+);
+plus.onclick = ()=>{bottomS.value = mergeString("+")}
 
 
 
