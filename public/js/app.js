@@ -1,4 +1,5 @@
 import {Parser} from "./parser.js"
+import Decimal from "https://cdn.jsdelivr.net/npm/decimal.js@10.4.3/decimal.mjs";
 
 // regexp for what to delet at a time
 let deletSpec = [
@@ -24,6 +25,7 @@ let spec = [
     [/^\+/, "PLUS"],
     [/^\-/, "MINUS"],
     [/^\//, "SLASH"],
+    [/^mod/, "MOD"],
     [/^\*/, "ASTRICS"],
     [/^\=/, "EQUAL"],
     [/^\(/, "LP"],
@@ -47,8 +49,43 @@ let spec = [
     [/^\S+/, "STRING"]
 ]
 
+
+// function to round decimal value to 9
+const goodOut = (number) =>
+{
+    let array = number.split("")
+    let i  = array.indexOf(".")
+    array.join("")
+    if(i == -1)
+    {
+        return number
+    }
+    return number.slice(0,i + 9)
+}
+
+
+const node = [
+// nude type
+["COS", 40-1, (number) => {let n = new Decimal(number);return n.cos(number)}],
+["SIN", 40-1, (number) => {let n = new Decimal(number);return n.sin(number)}],
+["TAN", 40-1, (number) => {let n = new Decimal(number);return n.tan(number)}],
+["E", 40-1, (number) => {let n = new Decimal(number);return n.exp(number)}],
+["LOG", 40-1, (number) => {let n = new Decimal(number);return n.log(number)}],
+["SQ", 40-1, (number) => {let n = new Decimal(number);return n.sqrt(number)}],
+["PERC", 40-1, (number) => {let n = new Decimal(number);return n.div(100)}],
+
+// led type 
+["PLUS", 10, (left,right) => {let L = new Decimal(left); let R = new Decimal(right); return L.add(R)}],
+["MINUS", 10, (left,right) => {let L = new Decimal(left); let R = new Decimal(right); return L.subtract(R)}],
+["SLASH", 20, (left,right) => {let L = new Decimal(left); let R = new Decimal(right); return L.div(R)}],
+["ASTRICS", 20, (left,right) => {let L = new Decimal(left); let R = new Decimal(right); return L.times(R)}],
+["POW", 20, (left,right) => {let L = new Decimal(left); let R = new Decimal(right); return L.pow(R)}],
+// ["MOD", 20, (left,right) => {let L = new Decimal(left); let R = new Decimal(right); return L.m(R)}]
+]
+
+
 // making a parser object and passing tokne specification array 
-let code = new Parser(spec)
+let code = new Parser(spec, node)
 
 // getting buttons
 let e  = document.getElementById("e")
@@ -270,9 +307,11 @@ ans.onclick = ()=>
 
 (equal.onclick ) = ()=>
 {
+    let tmp = ""
     code.init(bottomS.value)
-    bottomS.value = code.parse(0);
-    console.log(bottomS.value)
+    tmp = String(code.parse(0));
+    bottomS.value = goodOut(tmp)
+    console.log(goodOut(bottomS.value))
 }
 
 plus.onclick = ()=>
@@ -280,31 +319,6 @@ plus.onclick = ()=>
     bottomS.value = bottomS.value + "+"
     console.log(bottomS.value)
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
